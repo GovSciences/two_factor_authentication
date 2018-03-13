@@ -31,7 +31,7 @@ module TwoFactorAuthentication
       def two_factor_authentication_path_for(resource_or_scope = nil)
         scope = Devise::Mapping.find_scope!(resource_or_scope)
         change_path = "#{scope}_two_factor_authentication_path"
-        send(change_path)
+        main_app.send(change_path)
       end
 
     end
